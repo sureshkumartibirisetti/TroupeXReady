@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <title>Your Next Big Break - Join the Waitlist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    
+    .animated-gradient-bg {
+      background: linear-gradient(-45deg, #000000, #000000, #000000, #000000, #000000, #000000);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+      position: relative;
+    }
+    .animated-gradient-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(-45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+      background-size: 600% 600%;
+      animation: gradientShift 20s ease infinite reverse;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .glass-card {
+      background: rgba(44, 42, 42, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 35px 60px rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    
+    /* .creative-title-animate {
+      opacity: 0;
+      animation: creativeSlideIn 0.8s ease-out forwards;
+    } */
+    
+    @keyframes creativeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(60px) rotateX(45deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+      }
+    }
+    
+    .italic-here {
+      font-style: italic;
+      color: #71d6ed;
+      background: linear-gradient(75deg, #4763a5, #8541ad, #082a82);
+      background-clip: text;
+      -webkit-background-clip: text;
+      /* color: transparent; */
+      animation: colorShift 3s ease-in-out infinite;
+      font-weight: 600;
+      /* text-shadow: 0 0 30px rgba(0, 210, 255, 0.5); */
+    }
+    
+    @keyframes colorShift {
+      0%, 100% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(90deg); }
+    }
+    
+    /* .fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    } */
+    
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .creative-button {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .creative-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .creative-button:hover::before {
+      left: 100%;
+    }
+    
+    .creative-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+    }
+    
+    .floating-animation {
+      animation: floating 8s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .member-counter {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .member-counter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.05), transparent);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .invitation-badge {
+      background: linear-gradient(45deg, #ee89f5, #e2a8f9);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      animation: pulse 2s infinite;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      .mobile-optimized {
+        padding: 1rem;
+      }
+      
+      .mobile-title {
+        font-size: 3rem !important;
+        line-height: 1.1;
+      }
+      
+      .mobile-form {
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .mobile-title {
+        font-size: 3.5rem !important;
+      }
+      
+      .mobile-form {
+        padding: 1rem;
+      }
+    }
+    
+    /* Input focus animations */
+    .creative-input {
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .creative-input:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+    }
+    
+    .creative-select {
+      transition: all 0.3s ease;
+    }
+    
+    .creative-select:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+    }
+    .gradient-wave {
+      font-family: 'Montserrat', sans-serif;
+      /* color: #5381cb; */
+    background: linear-gradient(
+      270deg,
+      #6b97ff,
+      #7b329c,
+      #48dbfb,
+      #aa1dd1,
+      #5f27cd
+    );
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    
+    background-clip: text;
+    /* color: transparent; */
+    animation: waveGradient 8s ease infinite;
+  }
+
+  @keyframes waveGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  #bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 3; /* keeps video behind content */
+  object-fit: cover; /* makes video fill the screen without stretching */
+  background-size: cover;
+}
+
+  </style>
+</head>
+<body class="text-white min-h-screen">
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="./gradient.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="animated-gradient-bg min-h-screen relative">
+    <div class="container mx-auto px-4 py-8 min-h-screen flex flex-col lg:flex-row items-center justify-between mobile-optimized relative z-10">
+      
+      <!-- Left: Hero Section -->
+      <div class="w-full lg:w-1/2 mb-12 lg:mb-0 floating-animation">
+        <div class="space-y-8">
+          <div class="text-6xl md:text-6xl lg:text-7xl xl:text-9xl font-bold leading-tight text-white mobile-title gradient-wave" id="animatedTitle"></div>
+          
+          <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-in-up" style="animation-delay: 0.5s;">
+              Not everyone gets in. An invite-only app for film professionals, creators, and visionaries where the best opportunities and collaborations are already happening.         
+         </p>
+          
+          <div class="flex flex-col sm:flex-row gap-6 mt-8 fade-in-up" style="animation-delay: 0.5s;">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
+              <span class="text-gray-300 font-medium">Early access guaranteed</span>
+            </div>
+            <div class="flex items-center gap-3" >
+              <div class="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
+              <span class="text-gray-300 font-medium">No spam, ever</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form Section -->
+      <div class="w-full lg:w-1/2 lg:pl-12">
+        <div class="glass-card rounded-3xl p-8 mobile-form">
+          
+          <!-- Invitation Only Badge -->
+          <div class="flex justify-center mb-6">
+            <span class="invitation-badge">Invitation Only</span>
+          </div>
+          
+          <form id="waitlistForm" class="space-y-6" novalidate>
+            <div>
+              <label class="block text-gray-300 text-sm font-semibold mb-3" for="fullName">Full Name</label>
+              <input id="fullName" name="fullName" type="text" required
+                     class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                     placeholder="Enter your name" />
+            </div>
+
+            <div>
+              <label class="block text-gray-300 text-sm font-semibold mb-3" for="email">Email Address or Mobile Number</label>
+              <input id="email" name="email" type="email" required
+                     class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                     placeholder="your.email@example.com or mobile number" />
+            </div>
+
+            <div>
+              <label class="block text-gray-300 text-sm font-semibold mb-3" for="role">Role</label>
+              <select id="role" name="role" required
+                      class="creative-select w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
+                <option value="">Select your role</option>
+                <option>Designer</option>
+              <option>Filmmaker</option>
+              <option>Director</option>
+              <option>AD</option>
+              <option>Producer</option>
+              <option>Executive Producer</option>
+              <option>Line Producer</option>
+              <option>Writer</option>
+              <option>Screenwriter</option>
+              <option>Actor</option>
+              <option>Playback Singer</option>
+              <option>Voice Artist</option>
+              <option>Casting Director</option>
+              <option>Junior Coordinator</option>
+              <option>Cinematographer</option>
+              <option>AC</option>
+              <option>Gaffer</option>
+              <option>Art Director</option>
+              <option>Production Designer</option>
+              <option>Art Associate</option>
+              <option>Stylist</option>
+              <option>Costume Designer</option>
+              <option>Makeup Artist</option>
+              <option>Hairdresser</option>
+              <option>Music Director</option>
+              <option>Composer</option>
+              <option>Sound Engineer</option>
+              <option>Dubbing Engineer</option>
+              <option>Creative Director</option>
+              <option>Audiographer</option>
+              <option>Choreographer</option>
+              <option>Fight Master</option>
+              <option>Stunt Assistant</option>
+              <option>Editor</option>
+              <option>DI</option>
+              <option>VFX</option>
+              <option>Post Production</option>
+              <option>PRO</option>
+              <option>Digital Marketing</option>
+              <option>Marketing Head</option>
+              <option>Distributor</option>
+              <option>Manager</option>
+              <option>Film Aspirant</option>
+              <option>Others</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-gray-300 text-sm font-semibold mb-3" for="location">Place</label>
+              <input id="location" name="location" type="text" required
+                     class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                     placeholder="Place" />
+            </div>
+
+            <button id="submitBtn" type="submit"
+                    class="creative-button w-full text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 mt-8">
+              Request Invitation
+            </button>
+          </form>
+
+          <!-- Thank You Message -->
+          <div id="thankYou" class="hidden text-center py-12">
+            <div class="text-6xl mb-6 animate-bounce">🎉</div>
+            <h2 class="text-3xl font-bold text-blue-400 mb-4">Thank you!</h2>
+            <p class="text-gray-300 text-lg">You're now part of something amazing. We will get back to you shortly! !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Creative Community Stats -->
+    <div class="container mx-auto px-4 pb-16 mobile-optimized relative z-10">
+      <div class="member-counter backdrop-blur-sm rounded-3xl p-8 text-center max-w-md mx-auto">
+        <h3 class="text-xl font-bold text-black-400 mb-6">Join the Creative Community</h3>
+        <div class="space-y-4">
+          <div class="text-5xl md:text-6xl font-black text-white" id="totalMembers">1251+</div>
+          <div class="text-gray-400 text-lg font-medium">Creative Community</div>
+          <div class="flex justify-center mt-4">
+            <div class="flex space-x-1">
+              <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <div class="w-2 h-2 bg-purple-500 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+              <div class="w-2 h-2 bg-pink-500 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const CONFIG = {
+  GAS_URL: 'https://script.google.com/macros/s/AKfycbxu4WMjUJiu51xZTrL8aMS9Z5FO5fOXQnVHdkp6cviJM2Ibu6Vd2t_oLXqFy6Z9awCwnA/exec',
+  TITLE: 'Your next big break is here .',
+  LETTER_DELAY_MS: 150
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  animateTitle(CONFIG.TITLE);
+  wireForm();
+  fetchStats();
+  animateInitialMemberCount();
+});
+
+/** Enhanced title animation with italic "here" */
+function animateTitle(text) {
+  const el = document.getElementById('animatedTitle');
+  el.innerHTML = '';
+  let i = 0;
+  
+  text.split(' ').forEach((word, wordIndex) => {
+    const wordSpan = document.createElement('span');
+    wordSpan.className = 'inline-block mr-6 gradient-wave';
+    
+    // Make "here" italic with special styling
+    if (word.toLowerCase() === 'here') {
+      wordSpan.classList.add('italic-here');
+    }
+    
+    word.split('').forEach(ch => {
+      const s = document.createElement('span');
+      s.textContent = ch;
+      s.className = 'creative-title-animate inline-block';
+      s.style.animationDelay = (i * CONFIG.LETTER_DELAY_MS) + 'ms';
+      i++;
+      wordSpan.appendChild(s);
+    });
+    
+    el.appendChild(wordSpan);
+  });
+}
+
+/** Animate initial member count from 1251+ */
+function animateInitialMemberCount() {
+  const el = document.getElementById('totalMembers');
+  const startValue = 1251;
+  
+  setTimeout(() => {
+    animateNumber(el, startValue, 0, 2000, true);
+  }, 1000);
+}
+
+/** Form handler - UNCHANGED */
+function wireForm() {
+  const form = document.getElementById('waitlistForm');
+  const btn  = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const fullName = form.fullName.value.trim();
+    const email    = form.email.value.trim();
+    const role     = form.role.value.trim();
+    const location = form.location.value.trim();
+
+    // basic validation
+    if (!fullName) return alert('Please enter your full name');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return alert('Please enter a valid email');
+    if (!role) return alert('Please select your role');
+    if (!location) return alert('Please enter your location');
+
+    setLoading(btn, true);
+
+    try {
+      // URL-encoded → no preflight; works great with Apps Script
+      const body = new URLSearchParams({ fullName, email, role, location }).toString();
+      const res = await fetch(CONFIG.GAS_URL + '?action=submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body
+      });
+
+      const data = await res.json().catch(() => ({}));
+      if (data && data.ok) {
+        showThanks();
+        form.reset();
+        // refresh stats after successful submission
+        fetchStats(true);
+      } else {
+        alert(data && data.error ? data.error : 'Submission failed. Try again.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Network error. Please try again.');
+    } finally {
+      setLoading(btn, false);
+    }
+  });
+}
+
+function setLoading(btn, loading) {
+  if (loading) {
+    btn.disabled = true;
+    btn.innerHTML = `
+      <div class="flex items-center justify-center">
+        <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+        Joining the community...
+      </div>`;
+  } else {
+    btn.disabled = false;
+    btn.innerHTML = '🚀 Join the Waitlist';
+  }
+}
+
+function showThanks() {
+  document.getElementById('waitlistForm').classList.add('hidden');
+  const card = document.getElementById('thankYou');
+  card.classList.remove('hidden');
+  card.classList.add('fade-in-up');
+}
+
+/** Fetch live stats from GAS (?action=stats) - UNCHANGED */
+async function fetchStats(withAnim = false) {
+  try {
+    const res = await fetch(CONFIG.GAS_URL + '?action=stats');
+    const { total = 0 } = await res.json();
+
+    const el = document.getElementById('totalMembers');
+    const baseCount = 1251;
+    const displayTotal = baseCount + total;
+    
+    if (withAnim) {
+      const currentValue = parseInt(el.textContent.replace(/[,+]/g, ''), 10);
+      animateNumber(el, displayTotal, currentValue, 1500, true);
+    } else {
+      // Don't animate on first load, we handle that separately
+      el.textContent = displayTotal.toLocaleString() + '+';
+    }
+  } catch (err) {
+    console.warn('Stats fetch failed:', err);
+    // Keep default value of 1251+
+    const el = document.getElementById('totalMembers');
+    el.textContent = '1251+';
+  }
+}
+
+function animateNumber(el, target, from = 0, duration = 1500, showPlus = false) {
+  const start = performance.now();
+
+  function step(ts) {
+    const progress = Math.min((ts - start) / duration, 1);
+    const easeOut = 1 - Math.pow(1 - progress, 3);
+    const value = Math.floor(from + (target - from) * easeOut);
+    el.textContent = value.toLocaleString() + (showPlus ? '+' : '');
+    
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+  requestAnimationFrame(step);
+}
+</script>
+</body>
+</html>
