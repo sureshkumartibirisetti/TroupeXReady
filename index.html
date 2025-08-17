@@ -268,9 +268,15 @@
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: 3; /* keeps video behind content */
+  z-index: 1; /* keeps video behind content */
   object-fit: cover; /* makes video fill the screen without stretching */
   background-size: cover;
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  #bgVideo {
+    object-position: center bottom; /* shift focus away from watermark */
+    transform: scale(1.1); /* zoom in slightly to crop watermark */
+  }
 }
 
   </style>
@@ -289,7 +295,7 @@
           <div class="text-6xl md:text-6xl lg:text-7xl xl:text-9xl font-bold leading-tight text-white mobile-title gradient-wave" id="animatedTitle"></div>
           
           <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-in-up" style="animation-delay: 0.5s;">
-              Not everyone gets in. An invite-only app for film professionals, creators, and visionaries where the best opportunities and collaborations are already happening.         
+              Not everyone gets in. An invite-only app for film professionals, creators, and visionaries where the best opportunities and collaborations are already happening!         
          </p>
           
           <div class="flex flex-col sm:flex-row gap-6 mt-8 fade-in-up" style="animation-delay: 0.5s;">
@@ -334,7 +340,7 @@
               <select id="role" name="role" required
                       class="creative-select w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
                 <option value="">Select your role</option>
-                <option>Designer</option>
+                <!-- <option>Designer</option> -->
               <option>Filmmaker</option>
               <option>Director</option>
               <option>AD</option>
@@ -426,7 +432,7 @@
 <script>
 const CONFIG = {
   GAS_URL: 'https://script.google.com/macros/s/AKfycbxu4WMjUJiu51xZTrL8aMS9Z5FO5fOXQnVHdkp6cviJM2Ibu6Vd2t_oLXqFy6Z9awCwnA/exec',
-  TITLE: 'Your next big break is here .',
+  TITLE: 'Your next big break is here ',
   LETTER_DELAY_MS: 150
 };
 
